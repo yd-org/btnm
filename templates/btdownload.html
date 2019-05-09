@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>文件下载页详情</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../static/btsearch/style.css" rel="stylesheet" type="text/css" />
+	<link href="../static/btsearch/result.css" rel="stylesheet" type="text/css" />
+	<link href="../static/btdownload.css" rel="stylesheet" type="text/css" />
+	<link rel="Shortcut Icon" href="../static/favicon.ico" />
+	<script type="text/javascript">
+              var browser = {
+                  versions: function () {
+                      var u = navigator.userAgent, app = navigator.appVersion;
+                      return {//移动终端浏览器版本信息
+                          trident: u.indexOf('Trident') > -1, //IE内核
+                          presto: u.indexOf('Presto') > -1, //opera内核
+                          webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                          gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                          mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                          ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                          android: u.indexOf('Android') > -1, //android终端或者uc浏览器
+                          iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                          iPad: u.indexOf('iPad') > -1, //是否iPad
+                          webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                      };
+                  }(),
+                  language: (navigator.browserLanguage || navigator.language).toLowerCase()
+              }
+              if (browser.versions.mobile == true || browser.versions.ios == true || browser.versions.android == true) {
+                  window.location.href = "mobile/index";
+              }
+    </script>
+	</head>
+	<body>
+    <div class="top">
+		<p>公告：本站已全新改版，并已更换域名，请牢记：www.btnm.cc，或Ctrl+D收藏本站不迷路；广告合作或交换友链：QQ770695446</p>
+	</div>
+	<div style="margin:0 auto;text-align:center;">
+        <a href="/">
+			<img style="width:400px;margin-top:10px;" src="../static/logo.png">
+		</a>
+	</div>
+	<div class="search">
+        <input class="text" type="text" name="search" autocomplete="off" placeholder="世界很精彩，我想搜搜看">
+        <input class="button" value="搜索" type="button" onclick="add_search()">
+	</div>
+    <div class="resultList">
+                <div class="container">
+                    <div class="fcontent">
+                        <div class="title">
+                            <h3><img src="../static/btsearch/pencil.png" alt="name">Torrent种子名称</h3>
+                        </div>
+                        <div class="content">
+                            <b>{{ title }}</b>
+                        </div>
+                    </div>
+                </div>
+                 <div class="container">
+                    <div class="fcontent">
+                        <div class="title">
+                            <h3><img src="../static/btsearch/tag.png" alt="tag">Tag标签</h3>
+                        </div>
+                        <div class="content">
+                            <span class="like">
+							{% for tag in tags %}
+								{% if tag != "" %}
+				               <a href="/bt?search={{ tag }}" target="_blank">{{ tag }}</a>
+							    {% endif %}
+							{% endfor %}
+				            </span>
+                        </div>
+                    </div>
+                </div>
+                 <div class="container">
+                    <div class="fcontent">
+                        <div class="title">
+                            <h3><img src="../static/btsearch/download.png" alt="download">Download下载地址</h3>
+                        </div>
+                        <div class="content">
+                            {% if "//" in id %}
+                            <a href="{{ id }}">{{ id }}</a>
+                            {% else %}
+                            <a href="magnet:?xt=urn:btih:{{ id }}">magnet:?xt=urn:btih:{{ id }}</a>
+                            {% endif %}
+                            <br>
+                            <span style="color: red;">如点击无法下载，请复制下载链接到115、迅雷、utorrent、Bitcomet等进行下载，或百度网盘离线下载。</span>
+                        </div>
+                    </div>
+                </div>
+				<div class="container">
+                    <div class="fcontent">
+                        <div class="title">
+                            <h3><img src="../static/btsearch/share.png" alt="download">Share分享BT种子/磁力链接</h3>
+                        </div>
+                        <div class="content">
+						<div class="bdsharebuttonbox"><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_isohu" data-cmd="isohu" title="分享到我的搜狐"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_kaixin001" data-cmd="kaixin001" title="分享到开心网"></a><a href="#" class="bds_ty" data-cmd="ty" title="分享到天涯社区"></a><a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a><a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a><a href="#" class="bds_iguba" data-cmd="iguba" title="分享到股吧"></a><a href="#" class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a><a href="#" class="bds_diandian" data-cmd="diandian" title="分享到点点网"></a><a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a><a href="#" class="bds_more" data-cmd="more"></a></div>		
+                            <span style="color: red;">亲，你知道吗？把尼玛bt分享给好基友吧，下载的人越多速度越快，把本页面分享给朋友一起下载吧^_^</span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    <script type="text/javascript">
+        function add_search(){
+            var val = $(".text").val();
+            window.location.href='/bt?search='+val
+    }
+    </script>
+	<script src="../static/btsearch/bt/js/jquery.min.js"></script>
+	</body>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","qzone","tsina","bdysc","weixin","renren","tqq","douban","bdxc","kaixin001","tqf","tieba","tsohu","bdhome","sqq","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","fbook","twi","linkedin","copy"],"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</html>
+

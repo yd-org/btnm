@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{{ key }}--世界很精彩，我想搜搜看！</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../static/btsearch/bt/css/animate.css">
+	<link rel="stylesheet" href="../static/btsearch/bt/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/btsearch/bt/css/style.css">
+	<link rel="Shortcut Icon" href="../static/favicon.ico" />
+	<script src="../static/btsearch/bt/js/modernizr-2.6.2.min.js"></script>
+	<script type="text/javascript">
+              var browser = {
+                  versions: function () {
+                      var u = navigator.userAgent, app = navigator.appVersion;
+                      return {//移动终端浏览器版本信息
+                          trident: u.indexOf('Trident') > -1, //IE内核
+                          presto: u.indexOf('Presto') > -1, //opera内核
+                          webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                          gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                          mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                          ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                          android: u.indexOf('Android') > -1, //android终端或者uc浏览器
+                          iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                          iPad: u.indexOf('iPad') > -1, //是否iPad
+                          webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                      };
+                  }(),
+                  language: (navigator.browserLanguage || navigator.language).toLowerCase()
+              }
+              if (browser.versions.mobile == true || browser.versions.ios == true || browser.versions.android == true) {
+                  window.location.href = "mobile/index";
+              }
+    </script>
+	</head>
+	<body>
+	<header id="fh5co-header">
+        <div class="top"><p>公告：本站已全新改版，并已更换域名，请牢记：www.btnm.cc，或Ctrl+D收藏本站不迷路；广告合作或交换友链：QQ770695446</p></div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 text-center">
+                    <a href="/"><img style="width:400px;margin-top:10px;" src="../static/logo.png"></a>
+				</div>
+                <div class="text-center">
+                    <input class="text" type="text" name="search" autocomplete="off" value="{{ key }}" placeholder="世界很精彩，我想搜搜看">
+                    <input class="button" value="搜索" type="button" onclick="add_search()">
+				</div>
+                <div style="margin: 5px auto;width: 804px;text-align: left;font-size: 15px;">
+                    <span class="like">猜你喜欢：
+						{% for likedata in likedatas %}
+                        <a href="./bt?search={{ likedata[0] }}">{{ likedata[0] }}</a> 
+						{% endfor %}
+                    </span>
+                </div>
+			</div>
+		</div>
+	</header>
+	<div class="container-fluid">
+		<div class="row fh5co-post-entry">
+			{% if res == 0 %}
+			<div class="text-center" style="color:#c00;">拼了命也没找到相关结果，请尝试重新搜索！</div>
+			{% else %}
+			{% for re in res %}
+			<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box gaodu">
+				<figure>
+					<a style="word-wrap: break-word;" href="./bt/download?id={{ re.0 }}&title={{ re.1 }}" target="_blank" class="title">{{ re.6 }}</a> 
+					{% if re.5 not in [None,''] %}
+					<br><a style="color:#008000;" href="./bt/yunbo?id={{ re.5 }}&moviename={{ re.6 }}" target="_blank">在线云播</a>
+					<span><img src="../static/jian.gif"></span>
+					{% endif %}
+				</figure>
+				<span style="font-size:14px;" class="fh5co-meta fh5co-date"><img src="../static/btsearch/bt/images/time.png" style="width:20px;">{{ re.3 }} <img src="../static/btsearch/bt/images/size.png" style="width:18px;">{{ re.2 }} <img src="../static/btsearch/bt/images/down.png" style="width:14px;">{{ re.4 }}</span>
+			</article>
+			{% endfor %}
+			{% endif %}
+		</div>
+		{% if res != 0 %}
+		<nav style="margin:0 auto; text-align:center;font-size: 14px;" aria-label="Page navigation">
+                <ul class="pagination">
+                    {{ html|safe }}
+                </ul>
+		</nav>
+		{% endif %}
+	</div>
+    <script type="text/javascript">
+        //模拟高亮显示
+        var x = document.getElementsByClassName("title");
+        var i;
+        for (i = 0; i < x.length; i++) {
+            x[i].innerHTML = x[i].innerHTML.replace(/({{ key }})/gi, "<span style=\"color:#c00\">$1</span>");
+        }
+    </script>
+    <script type="text/javascript">
+        function add_search(){
+            var val = $(".text").val();
+            window.location.href='./bt?search='+val
+    }
+    </script>
+	<script src="../static/btsearch/bt/js/jquery.min.js"></script>
+	<script src="../static/btsearch/bt/js/jquery.waypoints.min.js"></script>
+	<script src="../static/btsearch/bt/js/main.js"></script>
+	</body>
+</html>
+

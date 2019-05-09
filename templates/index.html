@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>BT搜索，bt种子，磁力搜索，尼玛BT资源搜索-最佳的bt种子磁力搜索引擎！</title>
+    <meta name="keywords" content="bt,BT,磁力链接,尼玛搜索,尼玛,磁力搜索,BT搜索,BT种子,BT下载,种子搜索,磁力链接搜索,磁力链接搜索引擎,磁力链,种子搜索神器,p2p种子搜索器,磁力,BT磁力链">
+	<meta name="description" content="BT搜索，bt磁力搜索，bt尼玛搜索，资源最新最全的搜索引擎，为您提供高效精准的磁力链接搜索服务！">
+    <link href="../static/index/index.css" type="text/css" rel="stylesheet">
+	<script>
+        window.onload = function() {
+			if (navigator.userAgent.indexOf('Firefox') >= 0 || navigator.userAgent.indexOf('Chrome') >= 0) {	
+			} 
+			else{
+			if (window.applicationCache) {
+            } else {
+                document.write("<h3 style='font-family:微软雅黑;'>你的浏览器版本过低或使用了兼容模式，请升级浏览器或使用极速模式！</h3>");
+				setTimeout("location.href='http://browsehappy.osfipin.com/'",3000);
+            }
+        }
+		}
+    </script>
+	<script type="text/javascript">
+              var browser = {
+                  versions: function () {
+                      var u = navigator.userAgent, app = navigator.appVersion;
+                      return {//移动终端浏览器版本信息
+                          trident: u.indexOf('Trident') > -1, //IE内核
+                          presto: u.indexOf('Presto') > -1, //opera内核
+                          webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                          gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                          mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                          ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                          android: u.indexOf('Android') > -1, //android终端或者uc浏览器
+                          iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                          iPad: u.indexOf('iPad') > -1, //是否iPad
+                          webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                      };
+                  }(),
+                  language: (navigator.browserLanguage || navigator.language).toLowerCase()
+              }
+              if (browser.versions.mobile == true || browser.versions.ios == true || browser.versions.android == true) {
+                  window.location.href = "mobile/index";
+              }
+    </script>
+	<link rel="Shortcut Icon" href="../static/favicon.ico" />
+</head>
+<body onkeydown="go_add_search()" style="margin:0;padding:0;">
+<div class="top">
+<p>公告：本站已全新改版，并已更换域名，请牢记：www.btnm.cc，或Ctrl+D收藏本站不迷路；广告合作或交换友链：QQ770695446</p>
+</div>
+<div class="center">
+    <a href="/"><img style="width: 400px" src="../static/index/logo.png" alt="尼玛BT搜索"></a>
+    <div class="search">
+            <input class="text" type="text" name="search" autocomplete="off" placeholder="世界很精彩，我想搜搜看" onblur="lostfocus();" />
+            <input class="btn" value="搜索" type="button" onclick="add_search()" />
+            <ul class="dataList">
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+             </ul>
+    </div>
+    <div class="container">
+                    <div class="fcontent">
+                        <div class="title">
+                            <h3><img src="../static/btsearch/day_hot.png" alt="tag">最近热门搜索</h3>
+                        </div>
+                        <div class="content">
+                            <span class="dict">
+                                <p class="pcolor">
+                                    {% for btkey in keys %}
+                                    <a href="./bt?search={{ btkey[0] }}" target="_blank"><span>{{ btkey[0] }}</span>
+									<span class="indexcount">{{ btkey[1] }}</span>
+									</a>
+                                    {% endfor %}
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+</div>
+<div class="footer">
+    <p>
+		© 2018 btnm.cc 版权所有 
+		<a href="http://www.btnm.cc">BT搜索</a>
+		|
+		<a href="http://www.btnm.cc">BT尼玛</a>
+		|
+		<a href="http://www.btnm.cc">磁力搜索</a>
+		|
+        <a href="./joke" target="_blank">内涵娱乐</a>
+        |
+        <a href="./music" target="_blank">音乐下载</a>
+        |
+        <a href="./freemovie" target="_blank">在线电影</a>
+        |
+        <a href="JavaScript:void(0)" onclick="openDialog2()">赞助本站</a>
+        |
+        <a href="JavaScript:void(0)" onclick = "openDialog()">免责声明</a>
+    </p>
+</div>
+<div id="light" class="white_content">
+            <h3>免责声明：</h3>
+            <p>本站所有资源均来源于网络，仅提供索引搜索服务，下载是通过第三方平台进行(如：迅雷/百度网盘等)，本站不会以任何形式存储文件。本站不保证搜索资源的正确性和合法性，需用户自行判定，请不要搜索违法或不良关键词；
+                本站所有资源权益归原作者所有，如你发现侵犯了你的权益，请及时联系本站处理。
+                本站所有资源搜索及浏览均免费，如你觉得本站可以，请考虑<a href="./juanzeng" target="_blank">捐赠</a>，相信有你的支持我们会变得更好。
+            </p>
+            <a href = "javascript:void(0)" onclick = "closeDialog()">关闭</a>
+</div>
+<!--<div id="youqinglianjie" class="white_content">
+            <h4>友情链接：</h4>
+            <p><a href="https://001.io/" target="_blank">GuosenWang</a> | <a href="https://fountpark.com" target="_blank">FountPark</a>
+            </p><br>
+            <a href = "javascript:void(0)" onclick = "closeDialog1()">关闭</a> <a href="./juanzeng" target="_blank">点此申请</a>
+</div>-->
+<div id="jz" class="white_content">
+            <h4>赞助固定金额1元</h4>
+			<ul>
+			<li><p>微信</p><p><img src="../static/weixin.png"></p></li>
+			<li><p>支付宝</p><p><img src="../static/zhifubao.png"></p></li>
+			<li><p>支付宝领红包</p><p><img style="width:138px;" src="../static/lhb.png"></p></li>
+			<li><a href = "javascript:void(0)" onclick = "closeDialog2()">关闭</a></li>
+			</ul>		
+</div>
+<div id="fade" class="black_overlay"></div>
+		<script type="text/javascript">
+        $(function(){
+        })
+        function openDialog(){
+			$("#light").fadeIn();
+			$("#fade").fadeIn();		
+        }
+        function closeDialog(){
+			$("#light").fadeOut();
+			$("#fade").fadeOut();
+        }
+		function openDialog1(){
+			$("#youqinglianjie").fadeIn();
+			$("#fade").fadeIn();
+        }
+        function closeDialog1(){
+			$("#youqinglianjie").fadeOut();
+			$("#fade").fadeOut();
+        }
+		function openDialog2(){
+			$("#jz").fadeIn();
+			$("#fade").fadeIn();
+        }
+        function closeDialog2(){
+			$("#jz").fadeOut();
+			$("#fade").fadeOut();
+        }
+    </script>
+</body>
+<script type="text/javascript" src="../static/jquery.min.js"></script>
+<script type="text/javascript">
+    var suggest_url = "./suggest";
+    var search_url ="./bt";
+    // 搜索建议
+    $(function(){
+        $('.text').bind(' input propertychange ',function(){
+            var searchText = $(this).val();
+            var tmpHtml = "";
+            $.ajax({
+                cache: false,
+                type: 'get',
+                dataType:'json',
+                url:suggest_url+"?s="+searchText,
+                async: true,
+                success: function(data) {
+                    for (var i=0;i<data.length;i++){
+                        tmpHtml += '<li><a href="'+search_url+'?search='+data[i]+'" target="_blank">'+data[i]+'</a></li>'
+                    }
+                    $('.dataList').html("");
+                    $('.dataList').append(tmpHtml);
+                    if (data.length == 0){
+                        $('.dataList').hide()
+                    }else {
+                        $('.dataList').show()
+                    }
+                }
+            });
+        } );
+    })
+
+    hideElement($('.dataList'), $('.text'));
+    //发起搜索
+    function add_search() {
+        var val = $(".text").val();
+        //window.location.href = search_url + '?search=' + val;
+		window.open(search_url + '?search=' + val);
+    }
+	function lostfocus()
+	{
+		setTimeout(function(){$('.dataList').hide();},2000);
+	}
+	//回车键触发搜索
+	function go_add_search() {
+        if(event.keyCode === 13)
+        {
+            add_search();
+        }
+    }
+</script>
+</html>

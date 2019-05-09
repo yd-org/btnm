@@ -1,0 +1,121 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>文件下载详情页</title>
+<link rel="Shortcut Icon" href="../static/favicon.ico" />
+<link href="../static/btsearch/style.css" rel="stylesheet" type="text/css" />
+<link href="../static/btsearch/result.css" rel="stylesheet" type="text/css" />
+<link href="../static/btdownload.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../static/jquery.min.js"></script>
+<script type="text/javascript" src="../static/scrolltopcontrol.js" charset="utf-8"></script>
+</head>
+<body>
+<div id="container" class="sideBarHide">
+	<div id="hd" class="ue-clear">
+    	<a href="/"><div class="logo"><img style="width:160px;" src="../static/btsearch/logo.png"></div></a>
+        <div class="inputArea">
+        	<input type="text" class="searchInput" value="{{ key }}" name="search" autocomplete="off" />
+            <input type="button" class="searchButton" onclick="add_search()"/>
+        </div>
+    </div>
+    <div class="nav">
+    	<ul class="searchList">
+            <li class="searchItem">以下内容由用户搜索指令自动获取，结果来源于网络，本站不存储任何资料，请于下载后24小时内删除。无法下载？<a href="./help" target="_blank">猛戳这里</a></li>
+        </ul>
+    </div>
+	<div id="bd" class="ue-clear">
+        <div id="main">
+            <div class="resultArea">
+                <div class="resultList">
+                <div class="container">
+                    <div class="fcontent">
+                        <div class="title">
+                            <h3><img src="../static/btsearch/pencil.png" alt="name">Torrent种子名称</h3>
+                        </div>
+                        <div class="content">
+                            <b>{{ title }}</b>
+                        </div>
+                    </div>
+                </div>
+                 <div class="container">
+                    <div class="fcontent">
+                        <div class="title">
+                            <h3><img src="../static/btsearch/tag.png" alt="tag">Tag标签</h3>
+                        </div>
+                        <div class="content">
+                            <span class="like">
+							{% for tag in tags %}
+								{% if tag != "" %}
+				               <a href="/bt?search={{ tag }}" target="_blank">{{ tag }}</a>
+							    {% endif %}
+							{% endfor %}
+				            </span>
+                        </div>
+                    </div>
+                </div>
+                 <div class="container">
+                    <div class="fcontent">
+                        <div class="title">
+                            <h3><img src="../static/btsearch/download.png" alt="download">Download下载地址</h3>
+                        </div>
+                        <div class="content">
+                            {% if "//" in id %}
+                            <a href="{{ id }}">{{ id }}</a>
+                            {% else %}
+                            <a href="magnet:?xt=urn:btih:{{ id }}">magnet:?xt=urn:btih:{{ id }}</a>
+                            {% endif %}
+                            <br>
+                            <span style="color: red;">如点击无法下载，请复制下载链接到115、迅雷、utorrent、Bitcomet等进行下载，或百度网盘离线下载。</span>
+                        </div>
+                    </div>
+                </div>
+				<div class="container">
+                    <div class="fcontent">
+                        <div class="title">
+                            <h3><img src="../static/btsearch/share.png" alt="download">Share分享BT种子/磁力链接</h3>
+                        </div>
+                        <div class="content">
+						<div class="bdsharebuttonbox"><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_isohu" data-cmd="isohu" title="分享到我的搜狐"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_kaixin001" data-cmd="kaixin001" title="分享到开心网"></a><a href="#" class="bds_ty" data-cmd="ty" title="分享到天涯社区"></a><a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a><a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a><a href="#" class="bds_iguba" data-cmd="iguba" title="分享到股吧"></a><a href="#" class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a><a href="#" class="bds_diandian" data-cmd="diandian" title="分享到点点网"></a><a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a><a href="#" class="bds_more" data-cmd="more"></a></div>		
+                            <span style="color: red;">亲，你知道吗？把尼玛bt分享给好基友吧，下载的人越多速度越快，把本页面分享给朋友一起下载吧^_^</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div><!-- End of main -->
+    </div><!--End of bd-->
+</body>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","qzone","tsina","bdysc","weixin","renren","tqq","douban","bdxc","kaixin001","tqf","tieba","tsohu","bdhome","sqq","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","fbook","twi","linkedin","copy"],"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<script type="text/javascript">
+    var search_url = "/bt"	
+
+	function removeByValue(arr, val) {
+      for(var i=0; i<arr.length; i++) {
+        if(arr[i] == val) {
+          arr.splice(i, 1);
+          break;
+        }
+      }
+    }	
+	setHeight();
+	$(window).resize(function(){
+		setHeight();	
+	});
+	
+	function setHeight(){
+		if($('#container').outerHeight() < $(window).height()){
+			$('#container').height($(window).height()-33);
+		}	
+	}
+</script>
+<script>
+    function add_search(){
+        var val = $(".searchInput").val();
+        window.location.href=search_url+'?search='+val
+
+    }
+</script>
+</html>

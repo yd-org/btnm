@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="keywords" content="尼玛电影，mp4，免费电影，免费在线观看" />
+	<meta name="Description" content="尼玛电影，mp4，免费电影，免费在线观看" />
+    <title>免费电影在线观看--免广告，vip会员视频免费看</title>
+    <link rel="stylesheet" href="../static/main.css">
+	<link rel="stylesheet" href="../static/movie.css">
+    <link rel="stylesheet" href="../static/index.css">
+	<link rel="Shortcut Icon" href="../static/favicon.ico" />
+    <script src="../static/index.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="divtop">
+	<a href="#" onClick="return confirm('本站支持两种搜索方式：1.直接输入影片完整名称 2.输入影片播放地址(推荐 暂时支持优酷、爱奇艺、腾讯、乐视、芒果视频网站地址)，如果你输入影片名称播放的不是你预期的电影或尝试多次输入影片名无法播放影片，请直接粘贴影片播放地址，如果还是不能播放，那我也没办法了。');">如何使用</a>
+	<a target="_blank" download="周星驰经典高清影片50部大合集.rar" href="../static/zxcdyhj.rar">星爷经典电影合集下载</a>
+    <a target="_blank" href="./music">免费音乐下载</a>
+    <a target="_blank" href="./juanzeng">捐赠及留言</a>
+</div>
+<div style="margin: 30px auto 10px auto;text-align: center"><a href="./freemovie"><img style="width:253px;" src="../static/XMMOVIE.png" alt=""></a></div>
+<form target="_blank" action="./freemovie/api" ,method="POST">
+<table style="margin: 0 auto">
+    <tr>
+        <td style="font-family: 微软雅黑;font-size: 17px">输入影片完整片名或播放地址:</td>
+        <td><input class="text" type="text" name="key" placeholder="支持优酷、爱奇艺、腾讯、乐视、芒果vip会员视频播放" autocomplete="off"></td>
+        <td><input class="btn" value="在线观看" type="submit"></td>
+    </tr>
+</table>
+</form>
+<div class="ss">
+<ul>大家在看：
+{% for vdkey in vdkeys %}
+<a href="./freemovie/api?key={{ vdkey[0] }}" target="_blank">{{ vdkey[0] }}</a>
+{% endfor %}
+</ul>
+</div>
+<div class="movie">
+	<div class="shuoming"><span>本站影视资源均来源于网络，仅供学习和交流使用，请勿用于商业用途。找不到你想要的电影？去<a href="./">BT搜索</a>试试。</span></div>
+    <div id="tab">
+        <!--选项的头部-->
+        <div id="tab-header">
+            <ul>
+                <li class="selected">热门电影推荐<img src="../static/hot.gif"></li>
+                <li>最新电影速递</li>
+				<li>高分电影推荐</li>
+            </ul>
+        </div>
+        <!--主要内容-->
+        <div id="tab-content">
+            <div class="dom" style="display: block;">
+                <ul>
+                    {% for content in contents %}
+                        <li>
+                        <span><img src="{{content.0}}"></span>
+                        <p><a target="_blank" rel="nofollow" href="{{content.3}}">{{content.1}}</a></p>
+                        <span>{{content.2}}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="dom">
+                <ul>
+                    {% for content1 in contents1 %}
+                        <li>
+                        <span><img src="{{content1.0}}"></span>
+                        <p><a target="_blank" rel="nofollow" href="{{content1.3}}">{{content1.1}}</a></p>
+                        <span>{{content1.2}}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+			<div class="dom">
+                <ul>
+                    {% for content2 in contents2 %}
+                        <li>					
+                        <span><img src="{{content2.0}}"></span>
+                        <p><a target="_blank" rel="nofollow" href="{{content2.3}}">{{content2.1}}({{content2.5}}分)</a></p>
+                        <span>{{content2.2}}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+<!--<p>热门电影推荐<img src="../static/hot.gif"></p>
+<ul>
+    {% for content in contents %}
+		<li>
+		<span><img src="{{content.0}}"></span>
+		<p><a rel="nofollow" href="{{content.3}}">{{content.1}}</a></p>
+		<span>{{content.2}}</span>
+		</li>
+    {% endfor %}
+</ul>-->
+</div>
+</body>
+</html>

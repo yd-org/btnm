@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ key }}--世界很精彩，我想搜索看！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/mheader.css">
+</head>
+<body>
+        <div class="mheader">
+            <div>请牢记：www.btnm.cc，或Ctrl+D收藏本站不迷路。</div>
+        </div>
+        <div class="logo">
+            <img class="img" src="../static/logo.png">
+        </div>
+        <div class="search">
+            <input type="text" name="search" class="searchtext" id="searchtext">
+            <input type="submit" value="搜索" class="searchbtn" onclick="add_search()">
+        </div>
+        <div class="tuijian">
+            <span>猜你喜欢：
+			{% for likedata in likedatas %}
+                <a href="./bt?search={{ likedata[0] }}" target="_blank">{{ likedata[0] }}</a>
+			{% endfor %}
+            </span>
+        </div>
+		{% if res == 0 %}
+		<div class="result">
+			拼了命也没有找到相关结果，请尝试重新搜索。
+		</div>
+		{% else %}
+		{% for re in res %}
+        <div class="result">
+            <div class="itemhead">
+                <a href="./download?id={{ re.0 }}&title={{ re.1 }}" target="_blank" class="title">{{ re.6 }}</a>
+				{% if re.5 not in [None,''] %}
+					<a class="yunbo" href="./yunbo?id={{ re.5 }}&moviename={{ re.6 }}" target="_blank">在线云播</a>
+					<span><img src="../static/jian.gif"></span>
+				{% endif %}
+            </div>
+            <div class="itemfooter">
+                <span>收录日期：{{ re.3 }} 文件大小：{{ re.2 }} 点击热度：{{ re.4 }}</span>
+            </div>
+        </div>
+		{% endfor %}
+		{% endif %}
+        <div class="btfooter">
+            最多显示与搜索结果相近的第一页结果，更多请访问电脑版。
+        </div>
+			    <script type="text/javascript">
+        function add_search() {
+        var val = document.getElementById("searchtext").value;
+		window.location.href = "./bt" + '?search=' + val;
+    }
+    </script>
+	<script type="text/javascript">
+//模拟高亮显示
+var x = document.getElementsByClassName("title");
+var i;
+for (i = 0; i < x.length; i++) {
+    x[i].innerHTML = x[i].innerHTML.replace(/({{ key }})/gi, "<span style=\"color:#c00\">$1</span>");
+}
+</script>
+</body>
+</html>

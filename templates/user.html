@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+    
+    <title>用户中心</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/usercenter/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/usercenter/css/open-iconic-bootstrap.min.css">
+    
+    <link rel="stylesheet" href="../static/usercenter/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/usercenter/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="../static/usercenter/css/icomoon.css">
+    <link rel="stylesheet" href="../static/usercenter/css/animate.css">
+    <link rel="stylesheet" href="../static/usercenter/css/style.css">
+
+  </head>
+  <body>
+    
+    <aside class="probootstrap-aside js-probootstrap-aside">
+      <a href="#" class="probootstrap-close-menu js-probootstrap-close-menu d-md-none"><span class="oi oi-arrow-left"></span> Close</a>
+      <div class="probootstrap-site-logo probootstrap-animate" data-animate-effect="fadeInLeft">
+        
+        <a href="#" class="mb-2 d-block probootstrap-logo">{{ user }}</a>
+        <p class="mb-0">你是有多无聊，居然点进来了，右边是你的福利，不定时会更新哦！</p>
+	<p class="mb-0">1024地址官方1：hh.flexui.win 官方2：hh.etet.men 官方3：hh.dety.men</p>
+      </div>
+    </aside>
+
+
+    <main role="main" class="probootstrap-main js-probootstrap-main">
+      <div class="card-columns">
+		{% for url in urls %}
+        <div class="card">
+          <a href="#">
+          <img class="card-img-top probootstrap-animate" src="{{ url }}" alt="Card image cap" data-animate-effect="fadeIn">
+          </a>
+        </div>
+		{% endfor %}
+      </div>  
+    </main>
+
+    
+
+    <script src="../static/usercenter/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../static/usercenter/js/popper.min.js"></script>
+    <script src="../static/usercenter/js/bootstrap.min.js"></script>
+    <script src="../static/usercenter/js/owl.carousel.min.js"></script>
+    <script src="../static/usercenter/js/jquery.waypoints.min.js"></script>
+    <script src="../static/usercenter/js/imagesloaded.pkgd.min.js"></script>
+    <script src="../static/usercenter/js/imagesloaded.pkgd.min.js"></script>
+
+    <script src="../static/usercenter/js/main.js"></script>
+
+    
+  </body>
+</html>

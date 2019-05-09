@@ -1,0 +1,158 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>下载帮助</title>
+<link rel="Shortcut Icon" href="../static/favicon.ico" />
+<link href="../static/btsearch/style.css" rel="stylesheet" type="text/css" />
+<link href="../static/btsearch/result.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container" class="sideBarHide">
+	<div id="hd" class="ue-clear">
+    	<a href="/"><div class="logo"><img style="width:160px;" src="../static/btsearch/logo.png"></div></a>
+        <div class="inputArea">
+        	<input type="text" class="searchInput" value="" name="search" autocomplete="off" />
+            <input type="button" class="searchButton" onclick="add_search()"/>
+        </div>
+    </div>
+    <div class="nav">
+    	<ul class="searchList">
+            <li class="searchItem">以下内容由用户搜索指令自动获取，结果来源于网络，本站不存储任何资料，请于下载后24小时内删除。无法下载？<a href="./bt/help" target="_blank">猛戳这里</a></li>
+        </ul>
+    </div>
+	<div id="bd" class="ue-clear">
+        <div id="main">
+            <div class="resultArea">
+			<div class="resultList">
+<h1 style="text-align:left;">
+	<span style="font-size:18px;">关于迅雷下载出现“应版权方要求，文件无法下载”的解决办法</span> 
+</h1>
+<p style="text-align:left;">
+	<span style="font-size:14px;">现在很多新出来的资源迅雷都有版权限制，导致无法下载，如下图的情况：</span> 
+</p>
+<p style="text-align:left;">
+	<span style="font-size:14px;"><img src="https://i.loli.net/2019/02/11/5c61114d511b3.png" alt="" /><br />
+</span> 
+</p>
+<h1>
+</h1>
+<p style="text-align:left;">
+	<span style="font-size:14px;">以下是解决办法（注：本方法不一定全部适用）：</span> 
+</p>
+<p style="text-align:left;">
+	<span style="font-size:14px;">以电影《流浪地球》为例</span> 
+</p>
+<p style="text-align:left;">
+	<span style="font-size:14px;"><strong>第一步：找到并复制电影的迅雷下载地址</strong></span>
+</p>
+<p style="text-align:left;">
+	<img src="https://i.loli.net/2019/02/11/5c6111c9163fc.png" alt="" />
+</p>
+<p style="text-align:left;">
+	<span style="font-size:14px;"><strong>第二步：打开网站，</strong></span><span style="font-size:14px;"><strong>https://tool.lu/urlconvert，然后在“原始地址”中粘贴刚刚复制的地址，然后点击“转换”，找到“真实地址”，然后复制地址，如下图</strong></span>
+</p>
+<p style="text-align:left;">
+	<img src="https://i.loli.net/2019/02/11/5c61128cf3120.png" alt="" />
+</p>
+<p style="text-align:left;">
+	<span style="font-size:14px;"><strong>第三步：用任意浏览器的下载工具打开真实地址进行下载，下面以360浏览器为例</strong></span>
+</p>
+<p style="text-align:left;">
+	<img src="https://i.loli.net/2019/02/11/5c611310d9b6c.png" alt="" />
+</p>
+<p style="text-align:left;">
+	<span style="font-size:18px;color:#E53333;"><strong>最终电影就会被下载下来，速度可能较慢，需要耐心等待。</strong></span>
+</p>
+<p>
+	<br />
+</p>	           
+            </div>
+			</div>
+        </div><!-- End of main -->
+    </div><!--End of bd-->
+	</div>
+</body>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+<script type="text/javascript">
+    var search_url = "http://www.cddfun.cn/bt"	
+
+	function removeByValue(arr, val) {
+      for(var i=0; i<arr.length; i++) {
+        if(arr[i] == val) {
+          arr.splice(i, 1);
+          break;
+        }
+      }
+    }	
+	setHeight();
+	$(window).resize(function(){
+		setHeight();	
+	});
+	
+	function setHeight(){
+		if($('#container').outerHeight() < $(window).height()){
+			$('#container').height($(window).height()-33);
+		}	
+	}
+</script>
+<script>
+    var searchArr;
+    //定义一个search的，判断浏览器有无数据存储（搜索历史）
+    if(localStorage.search){
+        //如果有，转换成 数组的形式存放到searchArr的数组里（localStorage以字符串的形式存储，所以要把它转换成数组的形式）
+        searchArr= localStorage.search.split(",")
+    }else{
+        //如果没有，则定义searchArr为一个空的数组
+        searchArr = [];
+    }
+    //把存储的数据显示出来作为搜索历史
+    MapSearchArr();
+
+    function add_search(){
+        var val = $(".searchInput").val();
+        if (val.length>=2){
+            //点击搜索按钮时，去重
+            KillRepeat(val);
+            //去重后把数组存储到浏览器localStorage
+            localStorage.search = searchArr;
+            //然后再把搜索内容显示出来
+            MapSearchArr();
+        }
+
+        window.location.href=search_url+'?search='+val
+
+    }
+
+    function MapSearchArr(){
+        var tmpHtml = "";
+        var arrLen = 0
+        if (searchArr.length > 6){
+            arrLen = 6
+        }else {
+            arrLen = searchArr.length
+        }
+        for (var i=0;i<arrLen;i++){
+            tmpHtml += '<li><a href="./bt?search='+searchArr[i]+'">'+searchArr[i]+'</a></li>'
+        }
+        $(".mySearch .historyList").append(tmpHtml);
+    }
+    //去重
+    function KillRepeat(val){
+        var kill = 0;
+        for (var i=0;i<searchArr.length;i++){
+            if(val===searchArr[i]){
+                kill ++;
+            }
+        }
+        if(kill<1){
+            searchArr.unshift(val);
+        }else {
+            removeByValue(searchArr, val)
+            searchArr.unshift(val)
+        }
+    }
+</script>
+</html>

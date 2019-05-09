@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT搜索，bt种子，磁力搜索，尼玛BT资源搜索-最佳的bt种子磁力搜索引擎！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/mheader.css">
+</head>
+<body>
+    <div data-role="page">
+        <div class="mheader">
+            <div>请牢记:www.btnm.cc,广告合作或交换友链:QQ770695446</div>
+        </div>
+            <div class="logo">
+                <img class="img" src="../static/logo.png">
+            </div>
+            <div class="search">
+                <input type="text" name="search" class="searchtext" id="searchtext">
+                <input type="submit" value="搜索" class="searchbtn" onclick="add_search()">
+            </div>
+        <div class="searchtop">
+		{% for btkey in keys %}
+            <a href="./bt?search={{ btkey[0] }}" target="_blank">{{ btkey[0] }}</a>
+		{% endfor %}
+        </div>
+        <div class="footer">
+            <div>
+                <a href="http://www.btnm.cc">BT搜索</a>
+				|
+                <a href="http://www.btnm.cc">BT尼玛</a>
+				|
+                <a href="http://www.btnm.cc">磁力搜索</a>
+            </div>
+        </div>
+    </div>
+	    <script type="text/javascript">
+        function add_search() {
+        var val = document.getElementById("searchtext").value;
+		window.location.href = "./bt" + '?search=' + val;
+    }
+    </script>
+</body>
+</html>

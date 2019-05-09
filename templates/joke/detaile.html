@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+<title>内涵、搞笑、娱乐-熊猫娱乐</title>
+<link href="../static/styles.css" rel="stylesheet">
+<link rel="Shortcut Icon" href="../static/favicon.ico" />
+</head>
+<body>
+ <div class="mainContent">
+	<h1>内涵、搞笑、娱乐高清大图分享网-{{titles}}</h1>
+    <div class="blogitem">
+        {% for content in contents %}
+      <article>
+        <h2 class="title"><p>
+		{{content.3}}.{{content.0}}
+		</p></h2>
+        <ul class="text">
+		{% for re in content.1 %}
+            <img alt="" style="max-width:500px;" src="{{ re }}">
+		{% endfor %}
+        </ul>
+        <div class="textfoot">
+          <p>发布时间:{{ content.2 }}</p>
+		  <div class="bshare-custom"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+        </div>
+      </article>
+        {% endfor %} 
+    </div>
+ </div>
+ <div style="text-align:center;background-color:#fff;height:30px;">
+<p style="line-height:30px;font-size:13px;font-family:微软雅黑;">Powered by yd-org.cn(C哥)</p>
+</div>
+</body>
+</html>

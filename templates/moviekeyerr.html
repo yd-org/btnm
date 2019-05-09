@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="keywords" content="C哥,CDD,python编程,爬虫,免费音乐下载,优酷会员视频免费看,爱奇艺会员视频免费看,交友,python,python基础" />
+	<meta name="Description" content="C哥,CDD,python编程,爬虫,免费音乐下载,优酷会员视频免费看,爱奇艺会员视频免费看,交友,python,python基础" />
+    <title>免费电影在线观看--免广告，vip会员视频免费看</title>
+    <link rel="stylesheet" href="../static/main.css">
+	<link rel="stylesheet" href="../static/movie.css">
+	<link rel="Shortcut Icon" href="../static/favicon.ico" />
+</head>
+<body>
+<div class="divtop">
+    <a target="_blank" href="./music">免费音乐下载</a>
+    <a target="_blank" href="./juanzeng">捐赠及留言</a>
+</div>
+<div style="margin: 0 auto;text-align: center"><img width="120px" height="120px" src="../static/free.png" alt=""></div>
+<form target="_blank" action="./freemovie/api" ,method="POST">
+<table style="margin: 0 auto">
+    <tr>
+        <td style="font-family: 微软雅黑;font-size: 16px">输入影片完整片名或播放地址:</td>
+        <td><input class="text" type="text" name="key" placeholder="支持优酷、爱奇艺、腾讯、乐视、芒果vip会员视频播放" autocomplete="off"></td>
+        <td><input class="btn" value="在线观看" type="submit"></td>
+    </tr>
+</table>
+</form>
+<div class="ss">
+<ul>大家在看：
+{% for vdkey in vdkeys %}
+<a href="./freemovie/api?key={{ vdkey }}" target="_blank">{{ vdkey }}</a>
+{% endfor %}
+</ul>
+</div>
+<div style="text-align:center;font-family:微软雅黑;color:red;margin:30px auto 0 auto;">
+<h3>文明上网，从我做起，请不要搜索敏感词汇，做一个纯情健康的少年！</h3>
+</div>
+</body>
+</html>

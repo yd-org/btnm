@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正在试听歌曲：{{context.0}}</title>
+    <link rel="stylesheet" href="../static/main.css">
+</head>
+<body>
+<div class="downdiv">
+<ul>
+<li>
+<audio style ="width:500px;" src="{{ context.1 }}" controls autoplay controlslist="nodownload">
+</audio>
+</li>
+<li>歌曲名称：{{ context.0 }}</li>
+<li><a href="{{ context.1 }}" download="{{ context.0 }}.mp3" style="text-decoration: none">
+    <input class="btn" value="下载该歌曲" type="submit">
+</a>
+</li>
+</ul>
+</div>
+<div class="smdiv">
+一些浏览器点击下载后可能会直接打开歌曲链接而不会自动下载，请右键下载按钮文件另存为即可。
+</div>
+</body>
+</html>

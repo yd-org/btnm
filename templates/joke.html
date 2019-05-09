@@ -1,0 +1,82 @@
+﻿
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>内涵、搞笑、娱乐-尼玛娱乐网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="内涵、搞笑、娱乐" />
+	<meta name="keywords" content="内涵 搞笑 娱乐" />
+	<!-- Animate -->
+	<link rel="stylesheet" href="../static/joke/css/animate.css">
+	<!-- Icomoon -->
+	<link rel="stylesheet" href="../static/joke/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="../static/joke/css/bootstrap.css">
+
+	<link rel="stylesheet" href="../static/joke/css/style.css">
+
+	<link rel="Shortcut Icon" href="../static/favicon.ico" />
+	<!-- Modernizr JS -->
+	<script src="../static/joke/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+	<!-- END #fh5co-offcanvas-->
+	<header id="fh5co-header">
+		<div class="container-fluid">
+
+			<div class="row">
+				<div class="col-lg-12 col-md-12 text-center">
+					<p style="font-family:微软雅黑;font-size:30px;margin:15px 0 20px 0;padding:0;color:#454545;font-weight:bold;">内涵、搞笑、娱乐高清大图分享网</p>
+				</div>
+
+			</div>
+		
+		</div>
+
+	</header>
+	<div class="container-fluid">
+		<div class="row fh5co-post-entry">
+			{% for content in index_list %}
+			<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box gaodu">
+				<figure>
+					<a target="_blank" href="./joke/detail?date={{content.4}}&qs=[{{content.5}}期]"><img style="height:250px;" src="{{ content.1 }}" alt="Image" class="img-responsive"></a>
+				</figure>
+				<h2 class="fh5co-article-title">
+				{% if content.3 == "1" %}
+				<span style="color:red; margin:0;padding:0;">[新]</span>
+				{% endif %}
+				<a target="_blank" href="./joke/detail?date={{content.4}}&qs=[{{content.5}}期]">[{{content.5}}期]{{content.0}}</a></h2>
+				<span class="fh5co-meta fh5co-date">{{ content.2 }}</span>
+			</article>
+			{% endfor %} 
+		</div>
+			<nav style="margin:0 auto; text-align:center;" aria-label="Page navigation">
+                <ul class="pagination">
+                    {{ html|safe }}
+                </ul>
+    </nav>
+	</div>
+	<!-- jQuery -->
+	<script src="../static/joke/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="../static/joke/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="../static/joke/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="../static/joke/js/jquery.waypoints.min.js"></script>
+	<!-- Main JS -->
+	<script src="../static/joke/js/main.js"></script>
+
+	</body>
+</html>
+

@@ -1,0 +1,65 @@
+@charset "utf-8";
+/*css reset*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td , i{
+	margin:0;
+	padding:0;
+	border:0;
+	font-weight:inherit;
+	font-style:inherit;
+	font-size:100%;
+	font-family:inherit;
+	vertical-align:baseline;
+}
+body {line-height:1.5;}
+table {border-collapse: collapse;border-spacing:0;}
+caption, th, td ,b,strong{text-align:left;font-weight:normal;}
+table, td, th {vertical-align:middle;}	
+blockquote:before, blockquote:after, q:before, q:after {content:"";}
+blockquote, q {quotes:"" "";}
+a img {border:none;}
+em,cite{font-style:normal;}
+
+
+body { background:#fff; font: 12px/1.5 Tahoma,'宋体';color:#000;}
+h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#111;}
+a {text-decoration:none;cursor:pointer;}
+dl, dt, dd, ol, ul, li{ list-style:none;}
+
+/*some common class*/
+.left{float:left;}
+.right{float:right;}
+
+/*clear*/
+.ue-clear:after{content: ".";display:block;height:0;clear:both;visibility:hidden;}
+.ue-clear{display:inline-block;}
+*html .ue-clear{height:1%;}
+.ue-clear{display:block;}
+
+a{color:#0080cc;}
+a:hover{color:#008000;text-decoration:underline;}
+/*logo样式*/
+.logo{width:160px;padding:0 5px;}
+
+/*choose样式*/
+.choose{float:left;margin-right:15px;white-space:nowrap;}
+.choose .text{float:left;padding-left:20px;*padding-left:16px;white-space:nowrap; vertical-align:text-bottom;}
+.choose input[type=radio],.choose input[type=checkbox]{position:relative;*top:-3px;float:left;margin-right:-16px;}
+
+.pull-right{
+	text-align:center;
+	margin-bottom:20px;
+}
+.pagination { display: inline-block; padding-left: 0; border-radius: 0px; }
+.pagination li { display: inline; }
+.pagination li a { position: relative; float: left; padding: 6px 12px; margin-left: -1px; line-height: 1.428571429; text-decoration: none; background-color: #fff; border: 1px solid #ddd; }
+.pagination li:first-child a { margin-left: 0; border-bottom-left-radius: 4px; border-top-left-radius: 4px; }
+.pagination li:last-child a { border-top-right-radius: 4px; border-bottom-right-radius: 4px; }
+.pagination li a:hover, .pagination li a:focus { background-color: #428bca; color:#fff}
+.pagination .active a, .pagination .active a:hover, .pagination .active a:focus { z-index: 2; color: #fff; cursor: default; background-color: #428bca; border-color: #428bca; }
+.pagination .disabled a, .pagination .disabled a:hover, .pagination .disabled a:focus { color: #999; cursor: not-allowed; background-color: #fff; border-color: #ddd; }
+.pagination-lg li a { padding: 10px 16px; font-size: 18px; }
+.pagination-sm li a, .pagination-sm li span { padding: 5px 10px; font-size: 12px; }
+
+#foot{height:32px;line-height:32px; text-align:center;background:#f9f9f9;border-top:1px solid #e0e0e0;color:#ababab;}
+
+

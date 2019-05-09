@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>留言查看-C哥的官方网站</title>
+<link href="../static/base.css" rel="stylesheet">
+<link href="../static/style.css" rel="stylesheet">
+<link rel="Shortcut Icon" href="../static/favicon.ico" />
+</head>
+<body>
+<article class="blogs">
+<h1 class="t_nav"><span>感谢你抽出宝贵的时间留言，我们会认真对待每一位朋友的留言。</span><a href="./" class="n1">网站首页</a><a href="./juanzeng" class="n2">返回留言</a></h1>
+{% for context in contexts %}
+<div class="newblog left">
+   <h2>{{context.1}}</h2>
+   <p class="dateview"><span>昵称：{{context.0}}</span><span>留言时间：{{context.3}}</span></p>
+    <figure><img src="../static/001.png"></figure>
+    <ul class="nlist">
+      <p>{{context.2}}</p>
+	{% if context.4 !="" %}
+	  <p style="color:red;">站长回复：{{context.4}}<p>
+	{%endif%}
+    </ul>
+    <div class="line"></div>
+    <div class="blank"></div>
+</div>
+{% endfor %}
+	  <nav aria-label="Page navigation" class="pull-right">
+                <ul class="pagination">
+                    {{ html|safe }}
+                </ul>
+      </nav>
+</article>
+<footer>
+  <p>Powered by yd-org.cn(C哥)</p>
+</footer>
+<script src="../static/silder.js"></script>
+</body>
+</html>

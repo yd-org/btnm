@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>登陆-尼玛bt资源下载网</title>
+    <link rel="Shortcut Icon" href="../static/favicon.ico" />
+    <link href="../static/user/css/demo.css" rel="stylesheet" type="text/css">
+    <script src="../static/user/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="../static/user/js/jquery-ui.js" type="text/javascript"></script>
+</head>
+<body style="">
+    <section id="getintouch" class="bounceIn animated">
+        <div class="container" style="border-bottom: 0;">
+            <h1>
+                <span>尼玛bt资源下载网—登录</span>
+            </h1>
+        </div>
+        <div class="container">
+            <form class="contact" method="post" action="./login" id="form">
+            <div class="row clearfix">
+                <div class="lbl">
+                    <label for="name">
+                        用户名</label>
+                </div>
+                <div class="ctrl">
+                    <input type="text" id="name" name="name" data-required="true" data-validation="text"
+                        data-msg="Invalid Name">
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="lbl">
+                    <label for="name">
+                        密码</label>
+                </div>
+				                <div class="ctrl">
+                    <input type="password" id="password" name="password" data-required="true" data-validation="text"
+                        data-msg="Invalid Name">
+                </div>
+	    <div class="row  clearfix">
+		<p><input type="checkbox" name="cs" value="mdl" />30天内免登录</p>
+		</div>
+            <div class="row  clearfix">
+                <div class="span10 offset2">
+                    <input type="submit" name="submit" id="submit" class="submit" value="立即登录">
+                </div>
+            </div>
+            </form>
+			<div>没有账号？点击<a href="./reg">注册</a> <a href="./">返回首页</a></div>
+            <div id="validation">
+            </div>
+        </div>
+    </section>
+</body>
+</html>

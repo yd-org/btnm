@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/mheader.css">
+    <title>文件下载详情页</title>
+</head>
+<body>
+        <div class="mheader">
+            <div>请牢记：www.btnm.cc，或Ctrl+D收藏本站不迷路。</div>
+        </div>
+        <div class="logo">
+            <img class="img" src="../static/logo.png">
+        </div>
+        <div class="search">
+            <input type="text" name="search" class="searchtext" id="searchtext">
+            <input type="submit" value="搜索" class="searchbtn" onclick="add_search()">
+        </div>
+        <div class="downtitle">
+            <p>{{ title }}</p>
+        </div>
+        <div class="oook">
+            标签：
+			{% for tag in tags %}
+			{% if tag != "" %}
+			<a href="./bt?search={{ tag }}" target="_blank">{{ tag }}</a>
+			{% endif %}
+			{% endfor %}
+        </div>
+        <div class="oook">
+			下载地址：
+			{% if "//" in id %}
+			<a href="{{ id }}">{{ id }}</a>
+			{% else %}
+			<a href="magnet:?xt=urn:btih:{{ id }}">magnet:?xt=urn:btih:{{ id }}</a>
+			{% endif %}
+        </div>
+        <div class="oook">我要分享：</div><div class="bdsharebuttonbox"><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_isohu" data-cmd="isohu" title="分享到我的搜狐"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_kaixin001" data-cmd="kaixin001" title="分享到开心网"></a><a href="#" class="bds_ty" data-cmd="ty" title="分享到天涯社区"></a><a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a><a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a><a href="#" class="bds_iguba" data-cmd="iguba" title="分享到股吧"></a><a href="#" class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a><a href="#" class="bds_diandian" data-cmd="diandian" title="分享到点点网"></a><a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a><a href="#" class="bds_more" data-cmd="more"></a></div>
+			    <script type="text/javascript">
+        function add_search() {
+        var val = document.getElementById("searchtext").value;
+		window.location.href = "./bt" + '?search=' + val;
+    }
+    </script>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","qzone","tsina","bdysc","weixin","renren","tqq","douban","bdxc","kaixin001","tqf","tieba","tsohu","bdhome","sqq","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","fbook","twi","linkedin","copy"],"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</body>
+</html>

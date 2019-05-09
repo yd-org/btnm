@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+<title>内涵、搞笑、娱乐-C哥的官方网站</title>
+<link href="../static/styles.css" rel="stylesheet">
+<link rel="Shortcut Icon" href="../static/favicon.ico" />
+</head>
+<body>
+ <div class="mainContent">
+	<h1>内涵、搞笑、娱乐高清大图分享网</h1>
+    <div class="blogitem">
+	  <article>
+	    <h2 class="title"><p>
+		本站申明
+		</p></h2>
+	    <ul class="text">
+            本站所有图片均来源于网络，如你认为侵权，请联系本站删除；本站图片上所带文字的观点均不是本站的观点，与本站无关，请勿对号入座；本站为高清大图片分享网，而且会加载大量的图片，手机用流量慎入。
+        </ul>
+		  <div class="textfoot">
+          <p>发布时间:2018-10-01 10:01</p>
+		  <div class="bshare-custom"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+        </div>
+	  </article>
+        {% for content in index_list %}
+      <article>
+        <h2 class="title"><p>
+		{% if content.3 == "1" %}
+		<span style="color:red;width:100px;">[新]</span>
+		{% endif %}
+		<a target="_blank" href="./joke/detail?date={{content.4}}&qs=[{{content.5}}期]">[{{content.5}}期]{{content.0}}</a>
+		</p></h2>
+        <ul class="text">
+		{% for re in content.1 %}
+            <img alt="" style="max-width:600px;" src="{{ re }}">
+		{% endfor %}
+        </ul>
+        <div class="textfoot">
+          <p>发布时间:{{ content.2 }}</p>
+		  <div class="bshare-custom"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+        </div>
+      </article>
+        {% endfor %} 
+	  <nav aria-label="Page navigation" class="pull-right">
+                <ul class="pagination">
+                    {{ html|safe }}
+                </ul>
+      </nav>
+    </div>
+ </div>
+ <div style="text-align:center;background-color:#fff;height:30px;">
+<p style="line-height:30px;font-size:13px;font-family:微软雅黑;">Powered by yd-org.cn(C哥)</p>
+</div>
+</body>
+</html>

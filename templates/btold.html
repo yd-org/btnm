@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="keywords" content="C哥,CDD,python编程,爬虫,免费音乐下载,优酷会员视频免费看,爱奇艺会员视频免费看,交友,python,python基础" />
+	<meta name="Description" content="C哥,CDD,python编程,爬虫,免费音乐下载,优酷会员视频免费看,爱奇艺会员视频免费看,交友,python,python基础" />
+    <title>熊猫BT资源搜索--世界很精彩，我想搜搜看！</title>
+	<link rel="stylesheet" href="../static/main.css">
+	<link rel="stylesheet" href="../static/bt.css">
+	<link rel="Shortcut Icon" href="../static/favicon.ico" />
+	<link rel="stylesheet" type="text/css" id="app-stylesheet" href="../static/btsm.css">
+	<script type="text/javascript">
+        $(function(){
+        })
+        function openDialog(){
+            document.getElementById('light').style.display='block';
+            document.getElementById('fade').style.display='block';
+			document.getElementById("dv").style.display="none";
+        }
+        function closeDialog(){
+            document.getElementById('light').style.display='none';
+            document.getElementById('fade').style.display='none';
+			document.getElementById("dv").style.display="block";
+			
+        }
+    </script>
+</head>
+<body>
+<div class="divtop">
+	<a href="#" onClick="return confirm('本站所有资源均来源于网络，仅提供搜索下载服务，并不以任何形式存储文件；本站不保证资源的正确性和合法性，不承担任何责任，如果你发现侵权，请联系本站处理。');">免责声明</a>
+	<a href="./music">免费音乐下载</a>
+    <a target="_blank" href="./freemovie">免费电影在线观看</a>
+    <a target="_blank" href="./juanzeng">捐赠及留言</a>
+</div>
+<div class="image">
+    <a href="./"><img style="width:253px;" src="../static/index/logo.png"></a>
+</div>
+<form method="POST" action="./bt">
+<table style="margin: 0 auto">
+    <tr>
+        <td style="font-size:16px;font-family:微软雅黑;">输入资源名称:</td>
+        <td><input class="text" type="text" name="search" autocomplete="off"></td>
+        <td><input class="btn" value="搜索" type="submit"></td>
+    </tr>
+</table>
+</form>
+<div class="ss">
+	<ul>
+	<li>热门搜索：</li>
+	{% for btkey in keys %}
+	<li><a href="./bt?search={{ btkey[0] }}">{{ btkey[0] }}</a></li>
+	{% endfor %}
+	</ul>
+</div>
+{% if flag == "no" %}
+<div class="jg">
+<span>警告：你搜索的关键字返回的可能是违法或不良信息，如你继续浏览或下载产生的后果与本站无关。</span>
+</div>
+<script type="text/javascript">
+		window.onload = openDialog;
+</script>
+{% endif %}
+<div class="bt" id="dv">
+	{% if res == 0 %}
+	<div class="jg">
+		<span>对不起，暂时没有关于"{{ key }}"的BT种子资源，请尝试重新搜索，或者去<a href="./music">音乐搜索</a>和<a href="./freemovie">在线电影</a>看看。</span>
+	</div>
+	{% else %}
+	<ul style="font-family:微软雅黑;font-size:15px;font-weight:bold;margin:0;padding:0;background-color:#f8f8f8;width:900px;height:40px;text-align:left;line-height:40px;">搜索到约{{ total }}个关于<span style="color:#c00;">{{ key }}{% if key == "dota" %}(默认搜索){% endif %}</span>的BT资源链接，用时约{{ seconds }}秒
+	</ul>
+	{% for re in res %}
+	<dl class="dl">
+		<dt id="dt">
+		{% if "thunder://" in re.0 %}
+		<a href="{{ re.0 }}">
+		{% else %}
+		<a href="magnet:?xt=urn:btih:{{ re.0 }}">
+		{% endif %}
+		<div class="lj">{{ re.1}}</div></a></dt>
+		<dd>
+		<span>收录日期<b>{{ re.3 }}</b></span>
+		<span>文件大小<b>{{ re.2 }}</b></span>
+		<span>下载次数<b>{{ re.4 }}</b></span>
+		</dd>
+		<dd id="dd1">{{ re.1 }}</dd>
+	</dl>
+	{% endfor %}
+<script type="text/javascript">
+var x = document.getElementsByClassName("lj");
+var i;
+for (i = 0; i < x.length; i++) {
+    x[i].innerHTML = x[i].innerHTML.replace(/({{ key }})/gi, "<span style=\"color:#c00\">$1</span>");
+}
+</script>
+	{% endif %}
+</div>
+{% if res != 0 %}
+	  <nav aria-label="Page navigation" class="pull-right">
+                <ul class="pagination">
+                    {{ html|safe }}
+                </ul>
+      </nav>
+{% endif %}
+
+		<div id="light" class="white_content">
+            <h3>警告：</h3>
+            <p>你搜索的关键字返回的可能是违法或不良信息，如你继续浏览或下载产生的后果与本站无关。
+            </p>
+            <a href = "javascript:void(0)" onclick = "closeDialog()">继续浏览</a>
+			<a href = "./bt">离开</a>
+        </div>
+        <div id="fade" class="black_overlay"></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿*{
+    padding: 0;
+    margin: 0;
+}
+
+.div{
+	font-family:Microsoft YaHei;
+    margin: 10% 0 0 0;
+    text-align: center;
+}
+.div h1{
+	margin:0 auto;
+}
+.div p{
+    padding: 5px;
+}
+
+.div ul{
+    display: inline-block;
+    overflow: auto;
+}
+
+.div ul li{
+    margin: 0 15px 0 15px;
+    list-style-type: none;
+    float: left;
+    display: inline;
+}
+

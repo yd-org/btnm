@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="keywords" content="尼玛音乐，mp3，免费音乐下载" />
+	<meta name="Description" content="尼玛音乐，mp3，免费音乐下载" />
+    <title>尼玛音乐下载-免费的音乐下载网站</title>
+	<link href="../static/music/css/style.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="../static/music/js/jquery-1.8.3.min.js"></script>
+	<link rel="stylesheet" href="../static/main.css">
+	<link rel="Shortcut Icon" href="../static/favicon.ico" />
+</head>
+<body>
+<div class="divtop">
+	{% if user %}
+	<a href="./user" target="_blank">{{ user }}</a> 
+	<a href="./logout">注销</a>
+	{% else %}
+	<a target="_blank" href="./login">登录</a> 
+	<a target="_blank" href="./reg">注册</a>
+	{% endif %}
+	<a href="./music?songinput=新歌推荐">新歌推荐</a>
+	<a target="_blank" download="" href="../static/musicdown.exe">客户端下载(64位)</a>
+    <a target="_blank" href="./freemovie">免费电影在线观看</a>
+    <a target="_blank" href="./juanzeng">捐赠及留言</a>
+</div>
+<div class="image">
+    <a href="./music"><img style="width:253px;" src="../static/XMMUSIC.png"></a>
+</div>
+<form action="./music" ,method="POST">
+<table style="margin: 0 auto">
+    <tr>
+        <td style="font-size:16px;font-family:微软雅黑;">输入歌曲名称(歌手):</td>
+        <td><input class="text" type="text" name="songinput" autocomplete="off"></td>
+        <td><input class="btn" value="搜索" type="submit"></td>
+    </tr>
+</table>
+</form>
+{% if flag == "n" %}	    
+	<div class="header-bottom">  
+		 <div class="wrap">
+		    <div class="header-left" id="home">
+		      <section>
+				<ul class="lb-album" >
+					<li>
+						<a target="_blank" href="./music/download?code=NUZDRTRDQkNCOTZENjAyNTAzM0JDRTIwMjVGQzM5NDM=&sid=MTY0NTAzMA==">
+							<img src="../static/music/images/no1.jpg" alt="image01">
+							<span>周杰伦-告白气球</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="./music/download?code=ODBCMzY1M0RBNUFFNDU4NzQ4RkZGNzQzQTUyQTFDNzg=&sid=ODU0Njk0Ng==">
+							<img src="../static/music/images/no2.jpg" alt="image02">
+							<span>莫文蔚-如初之光</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="./music/download?code=M0FCRDQ4NTNGNDQ5QTVDQUU3MzIwRDQ5MzcyMDg4NTQ=&sid=OTYwNDYw">
+							<img src="../static/music/images/no3.jpg" alt="image03">
+							<span>许嵩-庐州月</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="./music/download?code=MUE2OEI2NDAwMDFDNzMzRkM2OTI0N0UyNTAzQzg4NDg=&sid=OTc5NzMz">
+							<img src="../static/music/images/no4.jpg" alt="image04">
+							<span>汪峰-再见青春</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="./music/download?code=QkVERDA0NkZCMzBBMEM0NDNDRDZGODU0NTc0QjA2NUU=&sid=OTE3NTIyMQ==">
+							<img src="../static/music/images/no5.jpg" alt="image05">
+							<span>火箭少女101-卡路里</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="./music/download?code=Q0I3RUU5N0Y0Q0MxMUM0RUE3QTFGQTRCNTE2QTVEOTc=&sid=MTgyMDAzMw==">
+							<img src="../static/music/images/no6.jpg" alt="image06">
+							<span>李玉刚-刚好遇见你</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="./music/download?code=MjgyNDI0MzA1RDBBMDk1NjQ0OTc5NzYwNjE3RkE2MDY=&sid=OTg0Mjgx">
+							<img src="../static/music/images/no7.jpg" alt="image07">
+							<span>刀郎-西海情歌</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="./music/download?code=NTFEMTIyRDY5QTM5OEVFRDI4MDRBQzUyMjM0QTRGMEQ=&sid=OTgyMTI4">
+							<img src="../static/music/images/no8.jpg" alt="image08">
+							<span>王力宏-需要人陪</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="./music/download?code=MjZFODEyMjk1NjQ3MUU3ODUzRjU1Mjk0RjAwMzUxMjY=&sid=ODkzMjc5Mg==">
+							<img src="../static/music/images/no9.jpg" alt="image09">
+							<span>胡夏-红墙叹</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="./music/download?code=NkRENDBDODFDRjYzNUU3QkM2QTlFODFBRTgwOTcwRDQ=&sid=OTc4ODY3NA==">
+							<img src="../static/music/images/no10.jpg" alt="image10">
+							<span>张杰-这就是爱</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="./music/download?code=QTc3NEE3OTQxODRBRjE3NDY5QjI3OTYzRTEyMEI1NjU=&sid=MTc0NzU0OQ==">
+							<img src="../static/music/images/no11.jpg" alt="image11">
+							<span>薛之谦-演员</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="./music/download?code=QkE2REFFOUY4NkY5NTJBODdBRjM4QTUwNDVDQzM2OTM=&sid=OTc0NzM4">
+							<img src="../static/music/images/no12.jpg" alt="image12">
+							<span>许巍-蓝莲花</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="./music/download?code=ODkwM0RFOTZERUIxOUJFQ0JGRDY5Nzg2NDk3NTZBOTI=&sid=MTQyNzYwNDA=">
+							<img src="../static/music/images/no13.jpg" alt="image13">
+							<span>李宇春-新物种</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="./music/download?code=RTI0OUQ5QjRBNkYwMzUzODU2QzJDRjNBNTIwRkM1RUE=&sid=OTYzMTc5">
+							<img src="../static/music/images/no14.jpg" alt="image14">
+							<span>林俊杰-醉赤壁</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="./music/download?code=NEY3NjU4N0E1QjBCOTNFRUYxNTg4M0U1NEREM0UyREI=&sid=MjkwMDg2Nw==">
+							<img src="../static/music/images/no15.jpg" alt="image08">
+							<span>毛不易-消愁</span>
+						</a>
+					</li>
+				</ul>
+			</section>
+        </div>
+     </div>
+ </div>   
+{% else %}
+<div style="width:900px;height:15px;margin:10px auto 0 auto;font-family:Microsoft YaHei;font-size:14px;">
+{% if total != 0 %}
+<p style="padding:0;margin:0;">搜索到<span style="color:#2868c8;">{{ key }}</span>的相关歌曲{{ total }}首，以下是第{{ page }}页</p>
+{% else %}
+<p style="padding:0;margin:0;">未搜索到<span style="color:#2868c8;">{{ key }}</span>的相关歌曲，请尝试重新搜索！</p>
+{% endif %}
+</div>
+{% if total != 0 %}
+<table style="margin: 5px auto 10px auto" width="900px" cellspacing="0px">
+    <thead>
+    <tr style="background-color: #f8f8f8;height: 40px;font-size:15px;font-family:Microsoft YaHei;">
+        <th>序号</th>
+        <th>歌曲名称</th>
+        <th>专辑</th>
+        <th>时长</th>
+        <th>试听|下载</th>
+    </tr>
+    </thead>
+    <tbody id="dj">
+    {% for song in context %}
+        <tr class="song">
+        <td align="center">{{ song.0 }}.</td>
+        <td class="lj" align="left">{{ song.1 }}</td>
+        <td class="lj">{{ song.2 }}</td>
+        <td align="center">{{ song.3 }}</td>
+        <td align="center"><a target="_blank" href="./music/download?code={{ song.4 }}&sid={{ song.5 }}">试听|下载</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+	  <nav aria-label="Page navigation" class="pull-right">
+                <ul class="pagination">
+                    {{ html|safe }}
+                </ul>
+      </nav>
+<script type="text/javascript">
+var x = document.getElementsByClassName("lj");
+var i;
+for (i = 0; i < x.length; i++) {
+    x[i].innerHTML = x[i].innerHTML.replace(/({{ key }})/gi, "<span style=\"color:#2868c8\">$1</span>");
+}
+</script>
+{% endif %}
+{% endif %}
+</body>
+</html>

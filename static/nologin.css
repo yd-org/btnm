@@ -1,0 +1,26 @@
+﻿.nologin{
+            padding: 5px;
+            width: 500px;
+            height: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            font-family: Microsoft YaHei;
+            font-weight: 200;
+            font-size: 18px;
+            background-color: #f2dede;
+            border-color:#ebccd1;
+            border: 1px solid;
+            border-radius: 4px;
+            color: #a94442;
+         }
+.nologin p a{
+            color: #0000FF;
+        }
+.nologin p{
+            margin: 0;
+            padding: 0;
+        }
